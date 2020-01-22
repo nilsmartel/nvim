@@ -1,8 +1,5 @@
 let g:ale_lsp_root = {}
 
-let g:ale_rust_rls_toolchain = 'stable'
-let g:ale_rust_cargo_check_tests = 1
-let g:ale_rust_cargo_check_examples = 1
 let g:ale_linters = {
     \ 'javascript': ['eslint'],
     \ 'rust': ['rls'],
