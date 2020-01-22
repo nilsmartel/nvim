@@ -1,0 +1,32 @@
+{
+    "languageserver": {
+        "c": {
+            "command": "ccls",
+            "filetypes": ["c", "cpp", "objc", "objcpp"]
+        },
+        "opencl": {
+          "command": "clangd",
+          "filetypes": ["opencl", "cl", "open-cl"]
+        },
+        "julia": {
+            "command": "julia-ls.jl",
+            "filetypes": ["julia"]
+        },
+        "bash": {
+            "command": "bash-language-server",
+            "args": ["start"],
+            "filetypes": ["sh"],
+            "ignoredRootPaths": ["~"]
+        },
+        "latex": {
+            "command": "texlab",
+            "ignoredRootPaths": ["~"],
+            "filetypes": ["tex", "bib", "plaintex", "context"]
+        },
+        "dockerfile": {
+            "command": "docker-langserver",
+            "filetypes": ["dockerfile"],
+            "args": ["--stdio"]
+        }
+    }
+}
