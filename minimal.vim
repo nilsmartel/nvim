@@ -40,7 +40,7 @@ call plug#begin()
 
     " Live editing
     Plug 'jpalardy/vim-slime'
-    Plug 'mattn/webapi-vim'
+    Plug 'vim-scripts/vim-auto-save'
 
     " Syntax and Themes
     Plug 'liuchengxu/space-vim-theme'
@@ -64,17 +64,15 @@ call plug#begin()
     Plug 'JuliaEditorSupport/julia-vim'
     Plug 'leafgarland/typescript-vim'
     Plug 'petRUShka/vim-opencl'
-
-    Plug 'vim-scripts/vim-auto-save'
+    Plug 'ollykel/v-vim'
 call plug#end()
 
 " Mappings for convinience
 nmap ø :CocAction<CR>
-nmap <space>e :CocCommand explorer<CR>
 nmap <space>r :OverCommandLine<CR>%s/
 nmap <space>e :CocCommand explorer<CR>
 nmap <space>f :FuzzyOpen<cr>
-nmap <space>f :FuzzyGrep<cr>
+nmap <space>g :FuzzyGrep<cr>
 
 " Color Scheme
 colorscheme darcula

@@ -1,4 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/Users/nilsmartel/.config/nvim'
-let g:netrw_dirhist_2='/Users/nilsmartel/Development/rust/datetime/src'
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/Users/nilsmartel/Development/fi editor/fi/src'
+let g:netrw_dirhist_2='/Users/nilsmartel/Development/rust/doodle/destruct/src'
+let g:netrw_dirhist_1='/Users/nilsmartel/github.com/Graphmasters/pulumi/microservice/.github/workflows'
