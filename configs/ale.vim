@@ -1,7 +1,7 @@
 let g:ale_lsp_root = {}
 
 let g:ale_linters = {
-    \ 'javascript': ['eslint'],
+    \ 'javascript': ['airbnb'],
     \ 'rust': ['rls'],
     \ 'crystal': ['srcy'],
     \ 'sh': ['language_server'],
@@ -11,7 +11,7 @@ let g:ale_linters = {
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['eslint'],
-\   'typescript': ['eslint'],
+\   'typescript': ['airbnb'],
 \}
 
 let g:ale_fix_on_save = 1
