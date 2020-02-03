@@ -43,6 +43,7 @@ call plug#begin()
     Plug 'vim-scripts/vim-auto-save'
 
     " Syntax and Themes
+    Plug 'bluz71/vim-nightfly-guicolors'
     Plug 'liuchengxu/space-vim-theme'
     Plug 'morhetz/gruvbox'
     Plug 'drewtempelmeyer/palenight.vim'
@@ -75,7 +76,8 @@ nmap <space>f :FuzzyOpen<cr>
 nmap <space>g :FuzzyGrep<cr>
 
 " Color Scheme
-colorscheme darcula
+" colorscheme darcula
+colorscheme xcodelight
 " set background=dark " use the dark Color Scheme
 
 " Plugin Specific
