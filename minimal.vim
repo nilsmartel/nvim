@@ -13,7 +13,8 @@
 "
 "   # Rust Analyzer
 "
-"   git clone https://github.com/rust-analyzer/rust-analyzer && cd rust-analyzer
+"   git clone https://github.com/rust-analyzer/rust-analyzer
+"   cd rust-analyzer
 "   rustup component add rust-src
 "   cargo xtask install --server
 "
@@ -78,7 +79,6 @@ nmap <space>g :FuzzyGrep<cr>
 " Color Scheme
 " colorscheme darcula
 colorscheme xcodelight
-" set background=dark " use the dark Color Scheme
 
 " Plugin Specific
     " Get Slime to work
