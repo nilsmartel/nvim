@@ -27,6 +27,14 @@
             "command": "docker-langserver",
             "filetypes": ["dockerfile"],
             "args": ["--stdio"]
+        },
+         "elm": {
+          "command": "elm-language-server",
+          "filetypes": ["elm"],
+          "rootPatterns": ["elm.json"],
+          "initializationOptions": {
+            "elmAnalyseTrigger": "change"
+          }
         }
     }
 }
