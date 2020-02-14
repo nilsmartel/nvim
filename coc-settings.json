@@ -5,8 +5,8 @@
             "filetypes": ["c", "cpp", "objc", "objcpp"]
         },
         "opencl": {
-          "command": "clangd",
-          "filetypes": ["opencl", "cl", "open-cl"]
+            "command": "clangd",
+            "filetypes": ["opencl", "cl", "open-cl"]
         },
         "julia": {
             "command": "julia-ls.jl",
@@ -27,6 +27,24 @@
             "command": "docker-langserver",
             "filetypes": ["dockerfile"],
             "args": ["--stdio"]
+        },
+        "haskell": {
+            "command": "hie-wrapper",
+            "args": ["--lsp"],
+            "rootPatterns": [
+                "*.cabal",
+                "stack.yaml",
+                "cabal.project",
+                "package.yaml"
+            ],
+            "filetypes": [
+                "hs",
+                "lhs",
+                "haskell"
+            ],
+            "initializationOptions": {
+                "languageServerHaskell": {}
+            }
         }
     }
 }

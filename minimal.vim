@@ -77,8 +77,7 @@ nmap <space>f :FuzzyOpen<cr>
 nmap <space>g :FuzzyGrep<cr>
 
 " Color Scheme
-" colorscheme darcula
-colorscheme xcodelight
+colorscheme darcula
 
 " Plugin Specific
     " Get Slime to work
@@ -94,5 +93,3 @@ au FileType rust source ~/.config/nvim/configs/rust.vim
 au FileType julia source ~/.config/nvim/configs/julia.vim
 
 source ~/.config/nvim/configs/ale.vim
-
-" let g:airline_theme = "palenight"
