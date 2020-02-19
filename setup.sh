@@ -1,4 +1,9 @@
 function install_prog() {
+  prog=$1
+  if [ -n $(which pacman) ]; then
+      sudo pacman -S $prog
+  fi
+
   if [ -n $(which apk) ]; then
     apk add $prog
   fi
@@ -15,12 +20,13 @@ function install_prog() {
 
 function check_programm() {
   prog=$1
-  echo "Checking $prog"
+  name=$2
+  echo "Checking $name"
   if [ -n $(which $prog) ]; then
-    echo "$prog exists"
+    echo "$name exists"
   else
-    echo "Installing $prog"
-    install_prog $prog
+    echo "Installing $name"
+    install_prog $name
   fi
 }
 
@@ -39,8 +45,8 @@ function link_neovim() {
   fi
 }
 
-check_programm nvim
-check_programm curl
+check_programm nvim neovim
+check_programm curl curl
 install_plug
 link_neovim
 nvim --headless +PlugInstall +q
