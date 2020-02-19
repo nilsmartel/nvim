@@ -93,3 +93,4 @@ au FileType rust source ~/.config/nvim/configs/rust.vim
 au FileType julia source ~/.config/nvim/configs/julia.vim
 
 source ~/.config/nvim/configs/ale.vim
+let g:airline#extensions#coc#enabled = 1
