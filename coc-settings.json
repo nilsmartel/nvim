@@ -1,54 +1,57 @@
 {
-  "languageserver": {
-    "c": {
-      "command": "ccls",
-      "filetypes": ["c", "cpp", "objc", "objcpp"]
-    },
-    "opencl": {
-      "command": "clangd",
-      "filetypes": ["opencl", "cl", "open-cl"]
-    },
-    "julia": {
-      "command": "julia-ls.jl",
-      "filetypes": ["julia"]
-    },
-    "bash": {
-      "command": "bash-language-server",
-      "args": ["start"],
-      "filetypes": ["sh"],
-      "ignoredRootPaths": ["~"]
-    },
-    "latex": {
-      "command": "texlab",
-      "ignoredRootPaths": ["~"],
-      "filetypes": ["tex", "bib", "plaintex", "context"]
-    },
-    "dockerfile": {
-      "command": "docker-langserver",
-      "filetypes": ["dockerfile"],
-      "args": ["--stdio"]
-    },
-    "haskell": {
-      "command": "hie-wrapper",
-      "args": ["--lsp"],
-      "rootPatterns": [
-        "*.cabal",
-        "stack.yaml",
-        "cabal.project",
-        "package.yaml"
-      ],
-      "filetypes": ["hs", "lhs", "haskell"],
-      "initializationOptions": {
-        "languageServerHaskell": {}
-      }
-    },
-    "elm": {
-      "command": "elm-language-server",
-      "filetypes": ["elm"],
-      "rootPatterns": ["elm.json"],
-      "initializationOptions": {
-        "elmAnalyseTrigger": "change"
-      }
+    "languageserver": {
+        "c": {
+            "command": "ccls",
+            "filetypes": ["c", "cpp", "objc", "objcpp"]
+        },
+        "opencl": {
+            "command": "clangd",
+            "filetypes": ["opencl", "cl", "open-cl"]
+        },
+        "julia": {
+            "command": "/usr/bin/julia",
+            "args": ["--startup-file=no", "--history-file=no", "-e",
+                "using LanguageServer;\n       using Pkg;\n       import StaticLint;\n       import SymbolServer;\n       env_path = dirname(Pkg.Types.Context().env.project_file);\n       debug = false;\n       server = LanguageServer.LanguageServerInstance(stdin, stdout, debug, env_path, \"\", Dict());\n       server.runlinter = true;\n       run(server);"
+            ],
+            "filetypes": ["julia"]
+        },
+        "bash": {
+            "command": "bash-language-server",
+            "args": ["start"],
+            "filetypes": ["sh"],
+            "ignoredRootPaths": ["~"]
+        },
+        "latex": {
+            "command": "texlab",
+            "ignoredRootPaths": ["~"],
+            "filetypes": ["tex", "bib", "plaintex", "context"]
+        },
+        "dockerfile": {
+            "command": "docker-langserver",
+            "filetypes": ["dockerfile"],
+            "args": ["--stdio"]
+        },
+        "haskell": {
+            "command": "hie-wrapper",
+            "args": ["--lsp"],
+            "rootPatterns": [
+                "*.cabal",
+                "stack.yaml",
+                "cabal.project",
+                "package.yaml"
+            ],
+            "filetypes": ["hs", "lhs", "haskell"],
+            "initializationOptions": {
+                "languageServerHaskell": {}
+            }
+        },
+        "elm": {
+            "command": "elm-language-server",
+            "filetypes": ["elm"],
+            "rootPatterns": ["elm.json"],
+            "initializationOptions": {
+                "elmAnalyseTrigger": "change"
+            }
+        }
     }
-  }
 }
