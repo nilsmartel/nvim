@@ -9,7 +9,7 @@
             "filetypes": ["opencl", "cl", "open-cl"]
         },
         "julia": {
-            "command": "/usr/bin/julia",
+            "command": "julia",
             "args": ["--startup-file=no", "--history-file=no", "-e",
                 "using LanguageServer;\n       using Pkg;\n       import StaticLint;\n       import SymbolServer;\n       env_path = dirname(Pkg.Types.Context().env.project_file);\n       debug = false;\n       server = LanguageServer.LanguageServerInstance(stdin, stdout, debug, env_path, \"\", Dict());\n       server.runlinter = true;\n       run(server);"
             ],
