@@ -94,3 +94,5 @@ au FileType julia source ~/.config/nvim/configs/julia.vim
 
 source ~/.config/nvim/configs/ale.vim
 let g:airline#extensions#coc#enabled = 1
+
+autocmd BufWritePre * %s/\s\+$//e
