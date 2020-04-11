@@ -52,6 +52,9 @@ call plug#begin()
     Plug 'arzg/vim-colors-xcode', { 'as': 'xcode' }
     Plug 'doums/darcula'
 
+    " Zen Mode
+    Plug 'junegunn/goyo.vim'
+
     " Status Bar
     Plug 'vim-airline/vim-airline'
 
