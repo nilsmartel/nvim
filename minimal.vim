@@ -77,7 +77,8 @@ call plug#end()
 
 " Mappings for convinience
 nmap ø :CocAction<CR>
-nmap <space>r :OverCommrndLine<CR>%s/
+nmap <space>r :OverCommandLine<CR>%s/
+nmap <space>w :OverCommandLine<CR>s/
 nmap <space>e :CocCommand explorer<CR>
 nmap <space>f :FuzzyOpen<cr>
 nmap <space>g :FuzzyGrep<cr>
