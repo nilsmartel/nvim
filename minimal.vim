@@ -61,11 +61,14 @@ call plug#begin()
     " Languager Server & linter
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'w0rp/ale'
+    Plug 'davidhalter/jedi-vim'
     " Plug 'zxqfl/tabnine-vim'
 
     " Language agnostic
     Plug 'rust-lang/rust.vim'
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+
     Plug 'JuliaEditorSupport/julia-vim'
     Plug 'leafgarland/typescript-vim'
     Plug 'petRUShka/vim-opencl'
@@ -74,10 +77,12 @@ call plug#end()
 
 " Mappings for convinience
 nmap ø :CocAction<CR>
-nmap <space>r :OverCommandLine<CR>%s/
+nmap <space>r :OverCommrndLine<CR>%s/
 nmap <space>e :CocCommand explorer<CR>
 nmap <space>f :FuzzyOpen<cr>
 nmap <space>g :FuzzyGrep<cr>
+
+nmap <space>k :Goyo<cr>
 
 " Color Scheme
 colorscheme darcula
