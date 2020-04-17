@@ -83,7 +83,8 @@ nmap <space>e :CocCommand explorer<CR>
 nmap <space>f :FuzzyOpen<cr>
 nmap <space>g :FuzzyGrep<cr>
 
-nmap <space>k :Goyo<cr>
+nmap <space>k :sp<cr>
+nmap <space>l :vsp<cr>
 
 " Color Scheme
 colorscheme darcula
