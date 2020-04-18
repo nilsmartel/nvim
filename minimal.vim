@@ -51,6 +51,7 @@ call plug#begin()
     Plug 'dracula/vim', { 'as': 'dracula' }
     Plug 'arzg/vim-colors-xcode', { 'as': 'xcode' }
     Plug 'doums/darcula'
+    Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 
     " Zen Mode
     Plug 'junegunn/goyo.vim'
@@ -105,3 +106,7 @@ source ~/.config/nvim/configs/ale.vim
 let g:airline#extensions#coc#enabled = 1
 
 autocmd BufWritePre * %s/\s\+$//e
+
+if has('nvim') || has('termguicolors')
+  set termguicolors
+endif
