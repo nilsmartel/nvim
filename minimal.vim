@@ -86,10 +86,6 @@ nmap <space>g :FuzzyGrep<cr>
 
 nmap <space>k :sp<cr>
 nmap <space>l :vsp<cr>
-
-" Color Scheme
-colorscheme darcula
-
 " Plugin Specific
     " Get Slime to work
 let g:slime_target = "tmux"
@@ -106,8 +102,13 @@ au FileType julia source ~/.config/nvim/configs/julia.vim
 source ~/.config/nvim/configs/ale.vim
 let g:airline#extensions#coc#enabled = 1
 
+" Automatically clear space at the end of lines
 autocmd BufWritePre * %s/\s\+$//e
 
-if has('nvim') || has('termguicolors')
-  set termguicolors
-endif
+" Doesnt work well with darcula
+" if has('nvim') || has('termguicolors')
+"  set termguicolors
+" endif
+
+" Color Scheme
+colorscheme darcula
