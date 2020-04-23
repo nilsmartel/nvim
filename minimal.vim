@@ -36,12 +36,16 @@ call plug#begin()
     " Finding and Opening Files
     Plug 'cloudhead/neovim-fuzzy'
 
+    " Navigating
+    Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
+
     " Usefull to see in realtime which parts a regex will hit
     Plug 'osyo-manga/vim-over'
 
     " Live editing
     Plug 'jpalardy/vim-slime'
     Plug 'vim-scripts/vim-auto-save'
+    Plug 'mg979/vim-visual-multi'
 
     " Syntax and Themes
     Plug 'bluz71/vim-nightfly-guicolors'
@@ -68,7 +72,7 @@ call plug#begin()
     " Language agnostic
     Plug 'rust-lang/rust.vim'
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-
+    Plug 'tikhomirov/vim-glsl'
 
     Plug 'JuliaEditorSupport/julia-vim'
     Plug 'leafgarland/typescript-vim'
@@ -86,6 +90,13 @@ nmap <space>g :FuzzyGrep<cr>
 
 nmap <space>k :sp<cr>
 nmap <space>l :vsp<cr>
+
+" Aerospace
+nmap <space>as <Plug>(AerojumpSpace)
+nmap <space>ab <Plug>(AerojumpBolt)
+nmap <space>aa <Plug>(AerojumpFromCursorBolt)
+nmap <space>ad <Plug>(AerojumpDefault) " Boring mode
+
 " Plugin Specific
     " Get Slime to work
 let g:slime_target = "tmux"
