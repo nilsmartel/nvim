@@ -99,6 +99,12 @@ nmap <space>ab <Plug>(AerojumpBolt)
 nmap <space>aa <Plug>(AerojumpFromCursorBolt)
 nmap <space>ad <Plug>(AerojumpDefault) " Boring mode
 
+" Moving Window sizes
+nmap <c-l> <c-w><
+nmap <c-h> <c-w>>
+nmap <c-j> <c-w>-
+nmap <c-k> <c-w>+
+
 " Plugin Specific
     " Get Slime to work
 let g:slime_target = "tmux"
