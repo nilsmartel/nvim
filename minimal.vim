@@ -50,6 +50,7 @@ call plug#begin()
     Plug 'mg979/vim-visual-multi'
 
     " Syntax and Themes
+    Plug 'rafalbromirski/vim-aurora'
     Plug 'bluz71/vim-nightfly-guicolors'
     Plug 'liuchengxu/space-vim-theme'
     Plug 'morhetz/gruvbox'
@@ -73,9 +74,9 @@ call plug#begin()
 
     " Language agnostic
     Plug 'rust-lang/rust.vim'
-    " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     Plug 'tikhomirov/vim-glsl'
-
+    Plug 'CraneStation/cranelift.vim'
     Plug 'JuliaEditorSupport/julia-vim'
     Plug 'leafgarland/typescript-vim'
     Plug 'petRUShka/vim-opencl'
@@ -105,6 +106,9 @@ nmap <c-h> <c-w>>
 nmap <c-j> <c-w>-
 nmap <c-k> <c-w>+
 
+" Highlight the current line
+set cul
+
 " Plugin Specific
     " Get Slime to work
 let g:slime_target = "tmux"
@@ -125,9 +129,9 @@ let g:airline#extensions#coc#enabled = 1
 autocmd BufWritePre * %s/\s\+$//e
 
 " Doesnt work well with darcula
-" if has('nvim') || has('termguicolors')
-"  set termguicolors
-" endif
+if has('nvim') || has('termguicolors')
+    set termguicolors
+endif
 
 " Color Scheme
-colorscheme darcula
+colorscheme aurora
