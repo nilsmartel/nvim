@@ -46,8 +46,10 @@ call plug#begin()
 
     " Live editing
     Plug 'jpalardy/vim-slime'
+    Plug 'metakirby5/codi.vim'
     Plug 'vim-scripts/vim-auto-save'
     Plug 'mg979/vim-visual-multi'
+
 
     " Syntax and Themes
     Plug 'rafalbromirski/vim-aurora'
@@ -81,6 +83,7 @@ call plug#begin()
     Plug 'leafgarland/typescript-vim'
     Plug 'petRUShka/vim-opencl'
     Plug 'ollykel/v-vim'
+    Plug 'davidhalter/jedi-vim'
 call plug#end()
 
 " Mappings for convinience
@@ -106,6 +109,14 @@ nmap <c-h> <c-w>>
 nmap <c-j> <c-w>-
 nmap <c-k> <c-w>+
 
+" Codi repls
+nmap <space>cp :Codi python<CR>
+nmap <space>cj :Codi julia<CR>
+nmap <space>ch :Codi haskell<CR>
+nmap <space>cn :Codi javascript<CR>
+nmap <space>ct :Codi typescript<CR>
+tmap <space>cc :Codi c<CR>
+
 " Highlight the current line
 set cul
 
@@ -129,9 +140,9 @@ let g:airline#extensions#coc#enabled = 1
 autocmd BufWritePre * %s/\s\+$//e
 
 " Doesnt work well with darcula
-if has('nvim') || has('termguicolors')
-    set termguicolors
-endif
+"   if has('nvim') || has('termguicolors')
+"       set termguicolors
+"   endif
 
 " Color Scheme
-colorscheme aurora
+colorscheme darcula
