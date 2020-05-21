@@ -71,7 +71,7 @@ call plug#begin()
     " Languager Server & linter
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'w0rp/ale'
-    Plug 'davidhalter/jedi-vim'
+    Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
     " Plug 'zxqfl/tabnine-vim'
 
     " Language agnostic
