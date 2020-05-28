@@ -135,6 +135,7 @@ au FileType julia source ~/.config/nvim/configs/julia.vim
 
 source ~/.config/nvim/configs/ale.vim
 let g:airline#extensions#coc#enabled = 1
+let g:airline_theme = 'dracula'
 
 " Automatically clear space at the end of lines
 autocmd BufWritePre * %s/\s\+$//e

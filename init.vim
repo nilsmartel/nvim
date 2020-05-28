@@ -32,7 +32,7 @@ autocmd FileType yaml set shiftwidth=2
 autocmd FileType json set shiftwidth=2
 autocmd FileType typescript set shiftwidth=2
 
+let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
 
-" Bloated config
-" source ~/.config/nvim/entry.vim
 source ~/.config/nvim/minimal.vim
