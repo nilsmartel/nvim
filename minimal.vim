@@ -41,8 +41,8 @@ call plug#begin()
     " Finding and Opening Files
     Plug 'cloudhead/neovim-fuzzy'
 
-    " Navigating
-    Plug 'ripxorip/aerojump.nvim', { 'do': ':UpdateRemotePlugins' }
+    " Documenting
+    Plug 'scrooloose/nerdcommenter'
 
     " Usefull to see in realtime which parts a regex will hit
     Plug 'osyo-manga/vim-over'
@@ -103,11 +103,6 @@ nmap <space>g :FuzzyGrep<cr>
 nmap <space>k :sp<cr>
 nmap <space>l :vsp<cr>
 
-" Aerospace
-nmap <space>as <Plug>(AerojumpSpace)
-nmap <space>ab <Plug>(AerojumpBolt)
-nmap <space>aa <Plug>(AerojumpFromCursorBolt)
-nmap <space>ad <Plug>(AerojumpDefault) " Boring mode
 
 " Moving Window sizes
 nmap <c-l> <c-w><
@@ -141,6 +136,7 @@ au FileType julia source ~/.config/nvim/configs/julia.vim
 
 source ~/.config/nvim/configs/ale.vim
 let g:airline#extensions#coc#enabled = 1
+let g:airline_theme = 'dracula'
 
 " Automatically clear space at the end of lines
 autocmd BufWritePre * %s/\s\+$//e
