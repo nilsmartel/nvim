@@ -24,8 +24,6 @@
 " CocInstall coc-docker
 
 call plug#begin()
-    " Kick the hjkl habit
-    Plug 'takac/vim-hardtime'
 
     " Git
     Plug 'tpope/vim-fugitive'
@@ -88,9 +86,6 @@ call plug#begin()
     Plug 'ollykel/v-vim'
     Plug 'davidhalter/jedi-vim'
 call plug#end()
-
-" Activate hardtime
-let g:hardtime_default_on = 1
 
 " Mappings for convinience
 nmap ø :CocAction<CR>
