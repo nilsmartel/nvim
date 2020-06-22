@@ -1,5 +1,9 @@
 {
     "languageserver": {
+        "vlang": {
+            "command": "vls",
+            "filetypes": ["v", "vlang"]
+        },
         "c": {
             "command": "ccls",
             "filetypes": ["c", "cpp", "objc", "objcpp"]
@@ -52,6 +56,11 @@
             "initializationOptions": {
                 "elmAnalyseTrigger": "change"
             }
+        },
+        "crystal": {
+          "command": "scry",
+          "filetypes": ["crystal"]
         }
+
     }
 }

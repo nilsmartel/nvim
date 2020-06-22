@@ -35,6 +35,7 @@ call plug#begin()
     Plug 'google/vim-glaive'
     Plug 'rstacruz/vim-closer'
     Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-commentary'
 
     " Finding and Opening Files
     Plug 'cloudhead/neovim-fuzzy'
@@ -83,7 +84,7 @@ call plug#begin()
     Plug 'JuliaEditorSupport/julia-vim'
     Plug 'leafgarland/typescript-vim'
     Plug 'petRUShka/vim-opencl'
-    Plug 'ollykel/v-vim'
+    Plug 'ollykel/v-vim', { 'for': 'v' }
     Plug 'davidhalter/jedi-vim'
 call plug#end()
 
@@ -129,6 +130,7 @@ au FileType go source ~/.config/nvim/configs/go.vim
 au FileType rust source ~/.config/nvim/configs/rust.vim
 au FileType julia source ~/.config/nvim/configs/julia.vim
 
+
 source ~/.config/nvim/configs/ale.vim
 let g:airline#extensions#coc#enabled = 1
 let g:airline_theme = 'dracula'
@@ -143,3 +145,6 @@ autocmd BufWritePre * %s/\s\+$//e
 
 " Color Scheme
 colorscheme darcula
+
+au FileType vlang set termguicolors
+au FileType vlang colorscheme aurora
