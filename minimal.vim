@@ -152,3 +152,9 @@ colorscheme darcula
 
 au FileType vlang set termguicolors
 au FileType vlang colorscheme aurora
+
+" TODO check this in practice
+" I got a number of formatters installed by now.
+" Not happy with the `google/*` stuff.
+" Checking if coc does a better job
+ nnoremap F :call CocAction('format')<CR>
