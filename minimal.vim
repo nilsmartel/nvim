@@ -84,8 +84,10 @@ call plug#begin()
     Plug 'JuliaEditorSupport/julia-vim'
     Plug 'leafgarland/typescript-vim'
     Plug 'petRUShka/vim-opencl'
-    Plug 'ollykel/v-vim', { 'for': 'v' }
+    Plug 'ollykel/v-vim', { 'for': 'vlang' }
     Plug 'davidhalter/jedi-vim'
+    Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
+    Plug 'alx741/vim-hindent', { 'for': 'haskell' }
 call plug#end()
 
 " Mappings for convinience
