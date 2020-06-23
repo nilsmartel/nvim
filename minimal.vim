@@ -112,7 +112,9 @@ nmap <space>cj :Codi julia<CR>
 nmap <space>ch :Codi haskell<CR>
 nmap <space>cn :Codi javascript<CR>
 nmap <space>ct :Codi typescript<CR>
-tmap <space>cc :Codi c<CR>
+nmap <space>cc :Codi c<CR>
+
+nmap <space><space> :'<,'>Commentary<CR>
 
 " Highlight the current line
 set cul
