@@ -78,7 +78,7 @@ call plug#begin()
 
     " Language agnostic
     Plug 'rust-lang/rust.vim'
-    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+    Plug 'fatih/vim-go' " , { 'do': ':GoUpdateBinaries' }
     Plug 'tikhomirov/vim-glsl'
     Plug 'CraneStation/cranelift.vim'
     Plug 'JuliaEditorSupport/julia-vim'
@@ -157,4 +157,4 @@ au FileType vlang colorscheme aurora
 " I got a number of formatters installed by now.
 " Not happy with the `google/*` stuff.
 " Checking if coc does a better job
- nnoremap F :call CocAction('format')<CR>
+nnoremap <c-f> :call CocAction('format')<CR>
