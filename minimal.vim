@@ -148,7 +148,8 @@ autocmd BufWritePre * %s/\s\+$//e
 "   endif
 
 " Color Scheme
-colorscheme darcula
+
+au FileType rust,go,haskell colorscheme darcula
 
 au FileType vlang set termguicolors
 au FileType vlang colorscheme aurora
