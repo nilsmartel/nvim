@@ -153,6 +153,9 @@ colorscheme darcula
 au FileType vlang set termguicolors
 au FileType vlang colorscheme aurora
 
+au FileType html,javascript,typescript,json set termguicolors
+au FileType html,javascript,typescript,json colorscheme dracula
+
 " TODO check this in practice
 " I got a number of formatters installed by now.
 " Not happy with the `google/*` stuff.
