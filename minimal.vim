@@ -88,6 +88,7 @@ call plug#begin()
     Plug 'davidhalter/jedi-vim'
     Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
     Plug 'alx741/vim-hindent', { 'for': 'haskell' }
+    Plug 'pangloss/vim-javascript'
 call plug#end()
 
 " Mappings for convinience
@@ -156,6 +157,10 @@ au FileType vlang colorscheme aurora
 
 au FileType html,javascript,typescript,json set termguicolors
 au FileType html,javascript,typescript,json colorscheme dracula
+
+au FileType vim set termguicolors
+au FileType vim colorscheme challenger_deep
+
 
 " TODO check this in practice
 " I got a number of formatters installed by now.
