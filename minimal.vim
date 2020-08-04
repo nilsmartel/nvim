@@ -96,11 +96,15 @@ nmap ø :CocAction<CR>
 nmap <space>r :OverCommandLine<CR>%s/
 nmap <space>w :OverCommandLine<CR>s/
 nmap <space>e :CocCommand explorer<CR>
+
 nmap <space>f :FuzzyOpen<cr>
+
 nmap <space>g :FuzzyGrep<cr>
 
 nmap <space>k :sp<cr>
 nmap <space>l :vsp<cr>
+
+nmap <c-o>  o<c-c>k
 
 
 " Moving Window sizes
@@ -134,6 +138,7 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 au FileType go source ~/.config/nvim/configs/go.vim
 au FileType rust source ~/.config/nvim/configs/rust.vim
 au FileType julia source ~/.config/nvim/configs/julia.vim
+au FileType latex,tex source ~/.config/nbvim/configs/latex.vim
 
 
 source ~/.config/nvim/configs/ale.vim
