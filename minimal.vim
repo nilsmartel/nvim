@@ -155,15 +155,14 @@ autocmd BufWritePre * %s/\s\+$//e
 
 " Color Scheme
 
+set termguicolors
+au FileType rust,go,haskell,c,cpp,glsl,opencl,opengl,metal,html,javascript,typescript,json set notermguicolor
+
 au FileType rust,go,haskell colorscheme darcula
 au FileType c,cpp,glsl,opencl,opengl,metal colorscheme gruvbox
-
-au FileType vlang set termguicolors
-au FileType vlang colorscheme aurora
-
 au FileType html,javascript,typescript,json colorscheme gruvbox
 
-au FileType vim set termguicolors
+au FileType vlang colorscheme aurora
 au FileType vim colorscheme challenger_deep
 
 
