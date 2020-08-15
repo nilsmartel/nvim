@@ -101,9 +101,14 @@ nmap <space>f :FuzzyOpen<cr>
 
 nmap <space>g :FuzzyGrep<cr>
 
-nmap <space>k :sp<cr>
-nmap <space>l :vsp<cr>
+" Open window to a given side
+" and open finder window
+nmap <space>k :sp<cr><c-w>k:FuzzyOpen<cr>
+nmap <space>j :sp<cr>:FuzzyOpen<cr>
+nmap <space>l :vsp<cr>:FuzzyOpen<cr>
+nmap <space>h :vsp<cr><c-w>h:FuzzyOpen<cr>
 
+" new line underneath
 nmap <c-o>  o<c-c>k
 
 
@@ -156,13 +161,13 @@ autocmd BufWritePre * %s/\s\+$//e
 " Color Scheme
 
 set termguicolors
-au FileType c,cpp,glsl,opencl,opengl,metal,html,javascript,typescript,json set notermguicolors
+au FileType c,cpp,glsl,opencl,opengl,metal set notermguicolors
 
 au FileType rust,go,haskell colorscheme darcula
 au FileType c,cpp,glsl,opencl,opengl,metal colorscheme gruvbox
-au FileType html,javascript,typescript,json colorscheme gruvbox
-
+au FileType html,javascript,typescript,json,yaml colorscheme aurora
 au FileType vlang colorscheme aurora
+
 au FileType vim colorscheme challenger_deep
 
 
