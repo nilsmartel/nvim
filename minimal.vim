@@ -143,7 +143,7 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 au FileType go source ~/.config/nvim/configs/go.vim
 au FileType rust source ~/.config/nvim/configs/rust.vim
 au FileType julia source ~/.config/nvim/configs/julia.vim
-au FileType latex,tex source ~/.config/nbvim/configs/latex.vim
+au FileType latex,tex source ~/.config/nvim/configs/latex.vim
 
 
 source ~/.config/nvim/configs/ale.vim
