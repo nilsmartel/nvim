@@ -1,3 +1,7 @@
+" in case vim is started from fish
+if &shell =~# 'fish$'
+    set shell=sh
+endif
 " Coc installed files are:
 "
 " https://github.com/weirongxu/coc-explorer
@@ -89,6 +93,7 @@ call plug#begin()
     Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
     Plug 'alx741/vim-hindent', { 'for': 'haskell' }
     Plug 'pangloss/vim-javascript'
+    Plug 'dag/vim-fish'
 call plug#end()
 
 " Mappings for convinience
@@ -163,9 +168,10 @@ autocmd BufWritePre * %s/\s\+$//e
 set termguicolors
 au FileType c,cpp,glsl,opencl,opengl,metal set notermguicolors
 
-au FileType rust,go,haskell colorscheme darcula
+au FileType rust colorscheme dracula
+au FileType go,haskell colorscheme darcula
 au FileType c,cpp,glsl,opencl,opengl,metal colorscheme gruvbox
-au FileType html,javascript,typescript,json,yaml colorscheme aurora
+au FileType html,javascript,typescript,json,yaml colorscheme space_vim_theme
 au FileType vlang colorscheme aurora
 
 au FileType vim colorscheme challenger_deep
