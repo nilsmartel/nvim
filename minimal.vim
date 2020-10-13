@@ -172,6 +172,7 @@ au FileType rust colorscheme dracula
 au FileType go,haskell colorscheme darcula
 au FileType c,cpp,glsl,opencl,opengl,metal colorscheme gruvbox
 au FileType html,javascript,typescript,json,yaml colorscheme space_vim_theme
+au FileType bash,fish,sh,zsh colorscheme nightly
 au FileType vlang colorscheme aurora
 
 au FileType vim colorscheme challenger_deep
