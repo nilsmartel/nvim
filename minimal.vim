@@ -174,7 +174,7 @@ au FileType go,haskell colorscheme darcula
 au FileType c,cpp,glsl,opencl,opengl,metal colorscheme gruvbox
 au FileType html,javascript,typescript,json,yaml colorscheme space_vim_theme
 au FileType vlang,python,markdown colorscheme aurora
-au FileType shell,bash,fish,sh,zsh colorscheme nightly
+au FileType shell,bash,fish,sh,zsh colorscheme nightfly
 au FileType vlang colorscheme aurora
 
 au FileType vim colorscheme challenger_deep
