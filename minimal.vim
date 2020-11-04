@@ -28,6 +28,8 @@ endif
 " CocInstall coc-docker
 
 call plug#begin()
+    " themes
+    Plug 'bluz71/vim-nightfly-guicolors'
 
     " Git
     Plug 'tpope/vim-fugitive'
