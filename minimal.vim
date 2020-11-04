@@ -12,6 +12,7 @@ endif
 "
 " :CocInstall coc-rust-analyzer
 "
+" :CocInstall coc-actions
 "
 " Binaries required
 "
@@ -99,7 +100,7 @@ call plug#begin()
 call plug#end()
 
 " Mappings for convinience
-nmap ø :CocAction<CR>
+nmap ø :CocCommand actions.open<CR>
 nmap <space>r :OverCommandLine<CR>%s/
 nmap <space>w :OverCommandLine<CR>s/
 nmap <space>e :CocCommand explorer<CR>
@@ -174,7 +175,8 @@ au FileType rust colorscheme dracula
 au FileType go,haskell colorscheme darcula
 au FileType c,cpp,glsl,opencl,opengl,metal colorscheme gruvbox
 au FileType html,javascript,typescript,json,yaml colorscheme space_vim_theme
-au FileType bash,fish,sh,zsh colorscheme nightly
+au FileType vlang,python,markdown colorscheme aurora
+au FileType shell,bash,fish,sh,zsh colorscheme nightfly
 au FileType vlang colorscheme aurora
 
 au FileType vim colorscheme challenger_deep
