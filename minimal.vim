@@ -98,7 +98,7 @@ call plug#begin()
 call plug#end()
 
 " Mappings for convinience
-nmap ø :CocCommand actions.open<CR>
+nmap ø :CocAction<CR>
 nmap <space>r :OverCommandLine<CR>%s/
 nmap <space>w :OverCommandLine<CR>s/
 nmap <space>e :CocCommand explorer<CR>
@@ -170,6 +170,7 @@ set termguicolors
 au FileType c,cpp,glsl,opencl,opengl,metal set notermguicolors
 
 au FileType rust colorscheme dracula
+au FileType toml colorscheme xcodedark
 au FileType go,haskell colorscheme darcula
 au FileType c,cpp,glsl,opencl,opengl,metal colorscheme gruvbox
 au FileType html,javascript,typescript,json,yaml colorscheme space_vim_theme
@@ -179,6 +180,8 @@ au FileType vlang colorscheme aurora
 
 au FileType vim colorscheme challenger_deep
 
+let g:python_host_prog = "/usr/bin/python2"
+let g:python3_host_prog = "/usr/local/bin/python3"
 
 " TODO check this in practice
 " I got a number of formatters installed by now.
