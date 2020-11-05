@@ -1,10 +1,5 @@
 " Go related configurations
 
-" Deoplete Go
-let g:deoplete#sources#go#gocode_binary = "~/go/bin/gocode"
-let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
-let g:deoplete#sources#go#pointer = 1
-
 " Generally a lot of hightlighting
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_extra_types = 1

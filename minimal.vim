@@ -85,7 +85,7 @@ call plug#begin()
 
     " Language agnostic
     Plug 'rust-lang/rust.vim'
-    Plug 'fatih/vim-go' " , { 'do': ':GoUpdateBinaries' }
+    " Plug 'fatih/vim-go' " , { 'do': ':GoUpdateBinaries' }
     Plug 'tikhomirov/vim-glsl'
     Plug 'CraneStation/cranelift.vim'
     Plug 'JuliaEditorSupport/julia-vim'
