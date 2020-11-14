@@ -78,6 +78,7 @@ call plug#begin()
     Plug 'vim-airline/vim-airline'
 
     " Languager Server & linter
+    Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'w0rp/ale'
     Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
