@@ -28,6 +28,9 @@ endif
 " CocInstall coc-go
 " CocInstall coc-docker
 
+" Ensure that mouse clicking works nice
+set mouse=a
+
 call plug#begin()
     " themes
     Plug 'bluz71/vim-nightfly-guicolors'
@@ -173,15 +176,18 @@ set termguicolors
 au FileType c,cpp,glsl,opencl,opengl,metal set notermguicolors
 
 au FileType rust colorscheme dracula
-au FileType toml colorscheme xcodedark
+au FileType cfg,dockerfile colorscheme xcodedark
 au FileType go,haskell colorscheme darcula
 au FileType c,cpp,glsl,opencl,opengl,metal colorscheme gruvbox
 au FileType html,javascript,typescript,json,yaml colorscheme space_vim_theme
 au FileType vlang,python,markdown colorscheme aurora
 au FileType shell,bash,fish,sh,zsh colorscheme nightfly
 au FileType vlang colorscheme aurora
-
 au FileType vim colorscheme challenger_deep
+
+au FileType solar colorscheme xcodedark
+au FileType solar set syntax=haskell
+
 
 let g:python_host_prog = "/usr/bin/python2"
 let g:python3_host_prog = "/usr/local/bin/python3"
