@@ -87,7 +87,8 @@ call plug#begin()
     Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
     " Plug 'zxqfl/tabnine-vim'
 
-    " Language agnostic
+    " Language specific
+    Plug 'HerringtonDarkholme/yats.vim'
     Plug 'rust-lang/rust.vim'
     " Plug 'fatih/vim-go' " , { 'do': ':GoUpdateBinaries' }
     Plug 'tikhomirov/vim-glsl'
@@ -179,7 +180,7 @@ au FileType rust colorscheme dracula
 au FileType cfg,dockerfile colorscheme xcodedark
 au FileType go,haskell colorscheme darcula
 au FileType c,cpp,glsl,opencl,opengl,metal colorscheme gruvbox
-au FileType html,javascript,typescript,json,yaml colorscheme space_vim_theme
+au FileType html,javascript,typescript,typescriptreact,json,yaml colorscheme space_vim_theme
 au FileType vlang,python,markdown colorscheme aurora
 au FileType shell,bash,fish,sh,zsh colorscheme nightfly
 au FileType vlang colorscheme aurora
