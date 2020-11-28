@@ -37,6 +37,7 @@ call plug#begin()
 
     " Git
     Plug 'tpope/vim-fugitive'
+    Plug 'airblade/vim-gitgutter'
 
     " Formatting related
     Plug 'chiel92/vim-autoformat'
@@ -198,3 +199,9 @@ let g:python3_host_prog = "/usr/local/bin/python3"
 " Not happy with the `google/*` stuff.
 " Checking if coc does a better job
 nnoremap <c-f> :call CocAction('format')<CR>
+
+let g:gitgutter_sign_added = '✚'
+let g:gitgutter_sign_modified = '✹'
+let g:gitgutter_sign_removed = '-'
+let g:gitgutter_sign_removed_first_line = '-'
+let g:gitgutter_sign_modified_removed = '-'
