@@ -153,12 +153,6 @@ let g:slime_target = "tmux"
 autocmd InsertLeave, CompleteDone * if pumvisible() == 0 | pclose | endif
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
-" Language Agnostic sources
-au FileType go source ~/.config/nvim/configs/go.vim
-au FileType rust source ~/.config/nvim/configs/rust.vim
-au FileType julia source ~/.config/nvim/configs/julia.vim
-au FileType latex,tex source ~/.config/nvim/configs/latex.vim
-
 
 source ~/.config/nvim/configs/ale.vim
 let g:airline#extensions#coc#enabled = 1
@@ -177,16 +171,26 @@ autocmd BufWritePre * %s/\s\+$//e
 set termguicolors
 au FileType c,cpp,glsl,opencl,opengl,metal set notermguicolors
 
+
+" Language Agnostic sources
+au FileType go source ~/.config/nvim/configs/go.vim
+au FileType rust source ~/.config/nvim/configs/rust.vim
+au FileType julia source ~/.config/nvim/configs/julia.vim
+au FileType latex,tex source ~/.config/nvim/configs/latex.vim
 au FileType rust colorscheme dracula
 au FileType cfg,dockerfile colorscheme xcodedark
 au FileType go,haskell colorscheme darcula
 au FileType c,cpp,glsl,opencl,opengl,metal colorscheme gruvbox
-au FileType html,javascript,typescript,typescriptreact,json,yaml colorscheme space_vim_theme
+au FileType html,javascript,typescript,typescriptreact,json,yaml source ~/.config/nvim/configs/webdev.vim
+
+" Colorscheme selection
 au FileType vlang,python,markdown colorscheme aurora
 au FileType shell,bash,fish,sh,zsh colorscheme nightfly
 au FileType vlang colorscheme aurora
 au FileType vim colorscheme challenger_deep
 
+" Recognize solar files
+au BufNewFile,BufRead *.sol set filetype=solar
 au FileType solar colorscheme xcodedark
 au FileType solar set syntax=haskell
 
