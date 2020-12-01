@@ -41,9 +41,6 @@ call plug#begin()
 
     " Formatting related
     Plug 'chiel92/vim-autoformat'
-    Plug 'google/vim-maktaba'
-    Plug 'google/vim-codefmt'
-    Plug 'google/vim-glaive'
     Plug 'rstacruz/vim-closer'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-commentary'
