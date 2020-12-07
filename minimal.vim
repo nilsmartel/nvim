@@ -82,7 +82,6 @@ call plug#begin()
     Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'w0rp/ale'
-    Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
     " Plug 'zxqfl/tabnine-vim'
 
     " Language specific
@@ -181,7 +180,7 @@ au FileType c,cpp,glsl,opencl,opengl,metal colorscheme gruvbox
 au FileType html,javascript,typescript,typescriptreact,json,yaml source ~/.config/nvim/configs/webdev.vim
 
 " Colorscheme selection
-au FileType vlang,python,markdown colorscheme aurora
+au FileType vlang,python,markdown colorscheme xcodedark
 au FileType shell,bash,fish,sh,zsh colorscheme nightfly
 au FileType vlang colorscheme aurora
 au FileType vim colorscheme challenger_deep
