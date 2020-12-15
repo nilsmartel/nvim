@@ -32,12 +32,8 @@ endif
 set mouse=a
 
 call plug#begin()
-    " themes
-    Plug 'bluz71/vim-nightfly-guicolors'
-
     " Git
     Plug 'tpope/vim-fugitive'
-    Plug 'airblade/vim-gitgutter'
 
     " Formatting related
     Plug 'chiel92/vim-autoformat'
@@ -57,11 +53,10 @@ call plug#begin()
     " Live editing
     Plug 'jpalardy/vim-slime'
     Plug 'metakirby5/codi.vim'
-    Plug 'vim-scripts/vim-auto-save'
-    Plug 'mg979/vim-visual-multi'
 
 
     " Syntax and Themes
+    Plug 'bluz71/vim-nightfly-guicolors'
     Plug 'rafalbromirski/vim-aurora'
     Plug 'bluz71/vim-nightfly-guicolors'
     Plug 'liuchengxu/space-vim-theme'
@@ -72,9 +67,6 @@ call plug#begin()
     Plug 'doums/darcula'
     Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 
-    " Zen Mode
-    Plug 'junegunn/goyo.vim'
-
     " Status Bar
     Plug 'vim-airline/vim-airline'
 
@@ -82,12 +74,10 @@ call plug#begin()
     Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'w0rp/ale'
-    " Plug 'zxqfl/tabnine-vim'
 
     " Language specific
-    Plug 'HerringtonDarkholme/yats.vim'
     Plug 'rust-lang/rust.vim'
-    " Plug 'fatih/vim-go' " , { 'do': ':GoUpdateBinaries' }
+    Plug 'fatih/vim-go' , { 'do': ':GoUpdateBinaries' }
     Plug 'tikhomirov/vim-glsl'
     Plug 'CraneStation/cranelift.vim'
     Plug 'JuliaEditorSupport/julia-vim'
@@ -198,9 +188,3 @@ let g:python3_host_prog = "/usr/local/bin/python3"
 " Not happy with the `google/*` stuff.
 " Checking if coc does a better job
 nnoremap <c-f> :call CocAction('format')<CR>
-
-let g:gitgutter_sign_added = '✚'
-let g:gitgutter_sign_modified = '✹'
-let g:gitgutter_sign_removed = '-'
-let g:gitgutter_sign_removed_first_line = '-'
-let g:gitgutter_sign_modified_removed = '-'
