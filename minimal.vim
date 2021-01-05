@@ -76,10 +76,11 @@ call plug#begin()
     Plug 'w0rp/ale'
 
     " Language specific
+    Plug 'ziglang/zig.vim'
     " typescriptreact
     Plug 'HerringtonDarkholme/yats.vim'
     Plug 'rust-lang/rust.vim'
-    Plug 'fatih/vim-go' , { 'do': ':GoUpdateBinaries' }
+    Plug 'fatih/vim-go' " , { 'do': ':GoUpdateBinaries' }
     Plug 'tikhomirov/vim-glsl'
     Plug 'CraneStation/cranelift.vim'
     Plug 'JuliaEditorSupport/julia-vim'

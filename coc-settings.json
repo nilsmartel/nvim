@@ -69,7 +69,7 @@
       }
     },
     "crystal": {
-      "command": "scry",
+      "command": "/usr/local/bin/crystalline",
       "filetypes": ["crystal"]
     }
   },
