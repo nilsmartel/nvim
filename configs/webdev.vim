@@ -1,3 +1,3 @@
-colorscheme space_vim_theme
+colorscheme nightfly
 set shiftwidth=2
 set tabstop=2

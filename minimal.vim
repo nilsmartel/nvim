@@ -165,7 +165,7 @@ au FileType go source ~/.config/nvim/configs/go.vim
 au FileType rust source ~/.config/nvim/configs/rust.vim
 au FileType julia source ~/.config/nvim/configs/julia.vim
 au FileType latex,tex source ~/.config/nvim/configs/latex.vim
-au FileType rust colorscheme dracula
+au FileType rust colorscheme evening
 au FileType cfg,dockerfile colorscheme xcodedark
 au FileType go,haskell colorscheme darcula
 au FileType c,cpp,glsl,opencl,opengl,metal colorscheme gruvbox
