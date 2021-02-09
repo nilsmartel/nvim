@@ -165,17 +165,11 @@ au FileType go source ~/.config/nvim/configs/go.vim
 au FileType rust source ~/.config/nvim/configs/rust.vim
 au FileType julia source ~/.config/nvim/configs/julia.vim
 au FileType latex,tex source ~/.config/nvim/configs/latex.vim
-au FileType rust colorscheme evening
-au FileType cfg,dockerfile colorscheme xcodedark
-au FileType go,haskell colorscheme darcula
-au FileType c,cpp,glsl,opencl,opengl,metal colorscheme gruvbox
 au FileType html,javascript,typescript,typescriptreact,json,yaml source ~/.config/nvim/configs/webdev.vim
 
 " Colorscheme selection
-au FileType vlang,python,markdown colorscheme xcodedark
-au FileType shell,bash,fish,sh,zsh colorscheme nightfly
-au FileType vlang colorscheme aurora
-au FileType vim colorscheme challenger_deep
+colorscheme xcodedark
+set termguicolors
 
 " Recognize solar files
 au BufNewFile,BufRead *.sol set filetype=solar
