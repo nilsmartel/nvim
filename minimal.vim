@@ -76,9 +76,9 @@ call plug#begin()
     Plug 'w0rp/ale'
 
     " Language specific
+    Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
     Plug 'ziglang/zig.vim'
-    " typescriptreact
-    Plug 'HerringtonDarkholme/yats.vim'
+    Plug 'HerringtonDarkholme/yats.vim' "this one's for typescriptreact
     Plug 'rust-lang/rust.vim'
     Plug 'fatih/vim-go' " , { 'do': ':GoUpdateBinaries' }
     Plug 'tikhomirov/vim-glsl'
@@ -185,3 +185,8 @@ let g:python3_host_prog = "/usr/local/bin/python3"
 " Not happy with the `google/*` stuff.
 " Checking if coc does a better job
 nnoremap <c-f> :call CocAction('format')<CR>
+
+
+" latex live preview opened with :LLPStartPreview
+let g:livepreview_previewer = 'open -a Preview'
+nmap <space>x :LLPStartPreview<CR>
