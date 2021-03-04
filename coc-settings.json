@@ -5,7 +5,7 @@
       "filetypes": ["v", "vlang"]
     },
     "c": {
-      "command": "ccls",
+      "command": "clangd",
       "filetypes": ["c", "cpp", "objc", "objcpp"]
     },
     "opencl": {
@@ -70,7 +70,7 @@
     },
     "crystal": {
       "command": "/usr/local/bin/crystalline",
-      "filetypes": ["crystal"]
+      "filetypes": ["crystal", "cr"]
     }
   },
   "codeLens.enable": true,

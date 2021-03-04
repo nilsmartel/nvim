@@ -31,6 +31,9 @@ endif
 " Ensure that mouse clicking works nice
 set mouse=a
 
+" Set the <esc> key to something more accessible
+inoremap jj <esc>
+
 call plug#begin()
     " Git
     Plug 'tpope/vim-fugitive'
@@ -43,6 +46,8 @@ call plug#begin()
 
     " Finding and Opening Files
     Plug 'cloudhead/neovim-fuzzy'
+
+    Plug 'markonm/traces.vim'
 
     " Documenting
     Plug 'scrooloose/nerdcommenter'
@@ -76,13 +81,15 @@ call plug#begin()
     Plug 'w0rp/ale'
 
     " Language specific
+    Plug 'jeaye/color_coded' " c
+    Plug 'vim-crystal/vim-crystal'
     Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
     Plug 'ziglang/zig.vim'
-    Plug 'HerringtonDarkholme/yats.vim' "this one's for typescriptreact
-    Plug 'rust-lang/rust.vim'
+    Plug 'HerringtonDarkholme/yats.vim' " typescript / react
+    Plug 'rust-lang/rust.vim'   " rust
     Plug 'fatih/vim-go' " , { 'do': ':GoUpdateBinaries' }
     Plug 'tikhomirov/vim-glsl'
-    Plug 'CraneStation/cranelift.vim'
+    Plug 'CraneStation/cranelift.vim' " cranelift ir
     Plug 'JuliaEditorSupport/julia-vim'
     Plug 'leafgarland/typescript-vim'
     Plug 'petRUShka/vim-opencl'
@@ -173,8 +180,11 @@ set termguicolors
 
 " Recognize solar files
 au BufNewFile,BufRead *.sol set filetype=solar
-au FileType solar colorscheme xcodedark
 au FileType solar set syntax=haskell
+
+" Recognize crystal
+au BufNewFile,BufRead *.cr set filetype=crystal
+" au FileType solar set syntax=ruby
 
 
 let g:python_host_prog = "/usr/bin/python2"
@@ -190,3 +200,7 @@ nnoremap <c-f> :call CocAction('format')<CR>
 " latex live preview opened with :LLPStartPreview
 let g:livepreview_previewer = 'open -a Preview'
 nmap <space>x :LLPStartPreview<CR>
+
+
+" using this only for neovide
+let g:neovide_iso_layout=1
