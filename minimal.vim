@@ -38,6 +38,9 @@ call plug#begin()
     " Git
     Plug 'tpope/vim-fugitive'
 
+    " Treesitter
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+
     " Formatting related
     Plug 'chiel92/vim-autoformat'
     Plug 'rstacruz/vim-closer'
