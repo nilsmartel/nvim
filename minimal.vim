@@ -32,7 +32,7 @@ endif
 set mouse=a
 
 " Set the <esc> key to something more accessible
-inoremap jj <esc>
+" inoremap jj <esc>
 
 call plug#begin()
     " Git
@@ -81,7 +81,6 @@ call plug#begin()
     " Languager Server & linter
     Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'w0rp/ale'
 
     " Language specific
     Plug 'jeaye/color_coded' " c
@@ -152,7 +151,6 @@ autocmd InsertLeave, CompleteDone * if pumvisible() == 0 | pclose | endif
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 
-source ~/.config/nvim/configs/ale.vim
 let g:airline#extensions#coc#enabled = 1
 let g:airline_theme = 'dracula'
 
@@ -172,7 +170,6 @@ au FileType c,cpp,glsl,opencl,opengl,metal set notermguicolors
 
 " Language Agnostic sources
 au FileType go source ~/.config/nvim/configs/go.vim
-au FileType rust source ~/.config/nvim/configs/rust.vim
 au FileType julia source ~/.config/nvim/configs/julia.vim
 au FileType latex,tex source ~/.config/nvim/configs/latex.vim
 au FileType html,javascript,typescript,typescriptreact,json,yaml source ~/.config/nvim/configs/webdev.vim
