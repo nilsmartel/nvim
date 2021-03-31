@@ -83,12 +83,12 @@ call plug#begin()
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     " Language specific
-    Plug 'jeaye/color_coded' " c
     Plug 'vim-crystal/vim-crystal'
     Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
     Plug 'ziglang/zig.vim'
     Plug 'HerringtonDarkholme/yats.vim' " typescript / react
     Plug 'rust-lang/rust.vim'   " rust
+    Plug 'cespare/vim-toml'
     Plug 'fatih/vim-go' " , { 'do': ':GoUpdateBinaries' }
     Plug 'tikhomirov/vim-glsl'
     Plug 'CraneStation/cranelift.vim' " cranelift ir
