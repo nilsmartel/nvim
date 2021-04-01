@@ -35,6 +35,10 @@ set mouse=a
 " inoremap jj <esc>
 
 call plug#begin()
+    " For working with multiple windows
+    Plug 'camspiers/animate.vim'    " remove this one to remove animation of window resizing
+    Plug 'camspiers/lens.vim'
+
     " Git
     Plug 'tpope/vim-fugitive'
 
