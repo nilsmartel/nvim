@@ -63,6 +63,7 @@ call plug#begin()
     Plug 'osyo-manga/vim-over'
 
     " Live editing
+    Plug 'michaelb/sniprun', {'do': 'bash install.sh'}
     Plug 'jpalardy/vim-slime'
     Plug 'metakirby5/codi.vim'
 
@@ -182,9 +183,20 @@ au FileType html,javascript,typescript,typescriptreact,json,yaml source ~/.confi
 colorscheme xcodedark
 set termguicolors
 
-" Recognize solar files
-au BufNewFile,BufRead *.sol set filetype=solar
-au FileType solar set syntax=haskell
+""" START Solar development
+"
+    " Recognize solar files
+    au BufNewFile,BufRead *.sol set filetype=solar
+    au FileType solar set syntax=haskell
+
+    " Recognize plain files
+    au BufNewFile,BufRead *.plain set filetype=plain
+    au FileType plain set syntax=go
+
+    " Recognize syntax files
+    au BufNewFile,BufRead *.syntax set syntax=haskell
+
+""" END Solar development
 
 " Recognize crystal
 au BufNewFile,BufRead *.cr set filetype=crystal
