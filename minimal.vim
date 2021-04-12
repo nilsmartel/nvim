@@ -88,6 +88,8 @@ call plug#begin()
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     " Language specific
+    Plug 'bfrg/vim-cpp-modern'
+    Plug 'keith/swift.vim'
     Plug 'vim-crystal/vim-crystal'
     Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
     Plug 'ziglang/zig.vim'
