@@ -43,7 +43,7 @@ call plug#begin()
     Plug 'tpope/vim-fugitive'
 
     " Treesitter
-    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+    " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
     " Formatting related
     Plug 'chiel92/vim-autoformat'
@@ -88,6 +88,7 @@ call plug#begin()
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     " Language specific
+    Plug 'rhysd/vim-llvm' " llvm ir
     Plug 'bfrg/vim-cpp-modern'
     Plug 'keith/swift.vim'
     Plug 'vim-crystal/vim-crystal'
@@ -172,8 +173,6 @@ autocmd BufWritePre * %s/\s\+$//e
 " Color Scheme
 
 set termguicolors
-au FileType c,cpp,glsl,opencl,opengl,metal set notermguicolors
-
 
 " Language Agnostic sources
 au FileType go source ~/.config/nvim/configs/go.vim
