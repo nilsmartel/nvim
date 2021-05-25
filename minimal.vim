@@ -35,6 +35,9 @@ set mouse=a
 " inoremap jj <esc>
 
 call plug#begin()
+    " shows buffers as tabs
+    Plug 'bagrat/vim-buffet'
+
     " For working with multiple windows
     Plug 'camspiers/animate.vim'    " remove this one to remove animation of window resizing
     Plug 'camspiers/lens.vim'
@@ -111,10 +114,11 @@ call plug#begin()
     Plug 'dag/vim-fish'
 call plug#end()
 
+" Go to definition (and center result)
+nmap gd :call CocAction('jumpDefinition', 'tab drop')<CR> zz
+
 " Mappings for convinience
 nmap ø :CocAction<CR>
-nmap <space>r :OverCommandLine<CR>%s/
-nmap <space>w :OverCommandLine<CR>s/
 nmap <space>e :CocCommand explorer<CR>
 nmap <space>f :FuzzyOpen<cr>
 
