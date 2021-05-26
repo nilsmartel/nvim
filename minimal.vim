@@ -35,9 +35,6 @@ set mouse=a
 " inoremap jj <esc>
 
 call plug#begin()
-    " shows buffers as tabs
-    Plug 'bagrat/vim-buffet'
-
     " For working with multiple windows
     Plug 'camspiers/animate.vim'    " remove this one to remove animation of window resizing
     Plug 'camspiers/lens.vim'
