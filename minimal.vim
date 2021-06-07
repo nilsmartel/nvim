@@ -32,9 +32,13 @@ endif
 set mouse=a
 
 " Set the <esc> key to something more accessible
-inoremap jj <esc>
+" inoremap jj <esc>
 
 call plug#begin()
+    " For working with multiple windows
+    Plug 'camspiers/animate.vim'    " remove this one to remove animation of window resizing
+    Plug 'camspiers/lens.vim'
+
     " Git
     Plug 'tpope/vim-fugitive'
 
@@ -59,6 +63,7 @@ call plug#begin()
     Plug 'osyo-manga/vim-over'
 
     " Live editing
+    Plug 'michaelb/sniprun', {'do': 'bash install.sh'}
     Plug 'jpalardy/vim-slime'
     Plug 'metakirby5/codi.vim'
 
@@ -81,15 +86,17 @@ call plug#begin()
     " Languager Server & linter
     Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'w0rp/ale'
 
     " Language specific
-    Plug 'jeaye/color_coded' " c
+    Plug 'rhysd/vim-llvm' " llvm ir
+    Plug 'bfrg/vim-cpp-modern'
+    Plug 'keith/swift.vim'
     Plug 'vim-crystal/vim-crystal'
     Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
     Plug 'ziglang/zig.vim'
     Plug 'HerringtonDarkholme/yats.vim' " typescript / react
     Plug 'rust-lang/rust.vim'   " rust
+    Plug 'cespare/vim-toml'
     Plug 'fatih/vim-go' " , { 'do': ':GoUpdateBinaries' }
     Plug 'tikhomirov/vim-glsl'
     Plug 'CraneStation/cranelift.vim' " cranelift ir
@@ -104,10 +111,11 @@ call plug#begin()
     Plug 'dag/vim-fish'
 call plug#end()
 
+" Go to definition (and center result)
+nmap gd :call CocAction('jumpDefinition', 'tab drop')<CR> zz
+
 " Mappings for convinience
 nmap ø :CocAction<CR>
-nmap <space>r :OverCommandLine<CR>%s/
-nmap <space>w :OverCommandLine<CR>s/
 nmap <space>e :CocCommand explorer<CR>
 nmap <space>f :FuzzyOpen<cr>
 
@@ -152,7 +160,6 @@ autocmd InsertLeave, CompleteDone * if pumvisible() == 0 | pclose | endif
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 
-source ~/.config/nvim/configs/ale.vim
 let g:airline#extensions#coc#enabled = 1
 let g:airline_theme = 'dracula'
 
@@ -167,12 +174,9 @@ autocmd BufWritePre * %s/\s\+$//e
 " Color Scheme
 
 set termguicolors
-au FileType c,cpp,glsl,opencl,opengl,metal set notermguicolors
-
 
 " Language Agnostic sources
 au FileType go source ~/.config/nvim/configs/go.vim
-au FileType rust source ~/.config/nvim/configs/rust.vim
 au FileType julia source ~/.config/nvim/configs/julia.vim
 au FileType latex,tex source ~/.config/nvim/configs/latex.vim
 au FileType html,javascript,typescript,typescriptreact,json,yaml source ~/.config/nvim/configs/webdev.vim
@@ -181,9 +185,20 @@ au FileType html,javascript,typescript,typescriptreact,json,yaml source ~/.confi
 colorscheme xcodedark
 set termguicolors
 
-" Recognize solar files
-au BufNewFile,BufRead *.sol set filetype=solar
-au FileType solar set syntax=haskell
+""" START Solar development
+"
+    " Recognize solar files
+    au BufNewFile,BufRead *.sol set filetype=solar
+    au FileType solar set syntax=haskell
+
+    " Recognize plain files
+    au BufNewFile,BufRead *.plain set filetype=plain
+    au FileType plain set syntax=go
+
+    " Recognize syntax files
+    au BufNewFile,BufRead *.syntax set syntax=haskell
+
+""" END Solar development
 
 " Recognize crystal
 au BufNewFile,BufRead *.cr set filetype=crystal
