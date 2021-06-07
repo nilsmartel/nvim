@@ -39,7 +39,7 @@ call plug#begin()
     Plug 'tpope/vim-fugitive'
 
     " Treesitter
-    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+    " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
     " Formatting related
     Plug 'chiel92/vim-autoformat'
