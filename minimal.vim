@@ -72,7 +72,6 @@ call plug#begin()
     Plug 'vim-airline/vim-airline'
 
     " Languager Server & linter
-    Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     " Language specific
@@ -101,7 +100,8 @@ call plug#end()
 " # Nice keybindings
 " Set the <esc> key to something more accessible
 inoremap J <esc>
-inoremap F :Autoformat<cr>
+nnoremap <c-f> :call CocAction('format')<cr>
+nnoremap F :Autoformat<cr>
 
 " Alternative formatting system:
 " nnoremap <c-f> :call CocAction('format')<CR>
@@ -114,7 +114,8 @@ nmap gd :call CocAction('jumpDefinition', 'tab drop')<CR> zz
 nmap gl :vsp<cr> :call CocAction('jumpDefinition')<CR> zz
 
 " Mappings for convinience
-nmap O :CocAction<CR>
+nmap ø :CocAction<CR>
+nmap O ko
 nmap <space>f :FuzzyOpen<cr>
 nmap <space>g :FuzzyGrep<cr>
 
