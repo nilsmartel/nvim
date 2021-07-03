@@ -36,8 +36,12 @@ set mouse=a
 
 call plug#begin()
     " For working with multiple windows
-    Plug 'camspiers/animate.vim'    " remove this one to remove animation of window resizing
-    Plug 'camspiers/lens.vim'
+    " TODO check if window errors actually stopped now
+    " Plug 'camspiers/animate.vim'    " remove this one to remove animation of window resizing
+    " Plug 'camspiers/lens.vim'
+
+    " Fireeeeefix <3
+    Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
     " Git
     Plug 'tpope/vim-fugitive'
