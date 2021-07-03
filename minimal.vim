@@ -111,6 +111,8 @@ inoremap F :Autoformat<cr>
 " 2.) center result
 nmap gd :call CocAction('jumpDefinition', 'tab drop')<CR> zz
 
+nmap gl :vsp<cr> :call CocAction('jumpDefinition')<CR> zz
+
 " Mappings for convinience
 nmap O :CocAction<CR>
 nmap <space>f :FuzzyOpen<cr>
