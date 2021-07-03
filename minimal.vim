@@ -31,23 +31,12 @@ endif
 " Ensure that mouse clicking works nice
 set mouse=a
 
-" Set the <esc> key to something more accessible
-" inoremap jj <esc>
-
 call plug#begin()
-    " For working with multiple windows
-    " TODO check if window errors actually stopped now
-    " Plug 'camspiers/animate.vim'    " remove this one to remove animation of window resizing
-    " Plug 'camspiers/lens.vim'
-
-    " Fireeeeefix <3
+    " for using neovim in Firefox
     Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
-    " Git
-    Plug 'tpope/vim-fugitive'
-
     " Treesitter
-    " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
     " Formatting related
     Plug 'chiel92/vim-autoformat'
@@ -58,13 +47,8 @@ call plug#begin()
     " Finding and Opening Files
     Plug 'cloudhead/neovim-fuzzy'
 
+    " hightlights selections of text when substituting
     Plug 'markonm/traces.vim'
-
-    " Documenting
-    Plug 'scrooloose/nerdcommenter'
-
-    " Usefull to see in realtime which parts a regex will hit
-    Plug 'osyo-manga/vim-over'
 
     " Live editing
     Plug 'michaelb/sniprun', {'do': 'bash install.sh'}
@@ -93,36 +77,43 @@ call plug#begin()
 
     " Language specific
     Plug 'rhysd/vim-llvm' " llvm ir
-    Plug 'bfrg/vim-cpp-modern'
-    Plug 'keith/swift.vim'
-    Plug 'vim-crystal/vim-crystal'
+    Plug 'bfrg/vim-cpp-modern', { 'for': 'cpp' }
+    Plug 'keith/swift.vim', { 'for': 'swift' }
+    Plug 'vim-crystal/vim-crystal', { 'for': 'crystal' }
     Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-    Plug 'ziglang/zig.vim'
-    Plug 'HerringtonDarkholme/yats.vim' " typescript / react
-    Plug 'rust-lang/rust.vim'   " rust
-    Plug 'cespare/vim-toml'
-    Plug 'fatih/vim-go' " , { 'do': ':GoUpdateBinaries' }
-    Plug 'tikhomirov/vim-glsl'
-    Plug 'CraneStation/cranelift.vim' " cranelift ir
-    Plug 'JuliaEditorSupport/julia-vim'
-    Plug 'leafgarland/typescript-vim'
-    Plug 'petRUShka/vim-opencl'
+    Plug 'ziglang/zig.vim', { 'for': 'zig' }
+    Plug 'HerringtonDarkholme/yats.vim', { 'for': 'typescriptreact' } " typescript / react
+    Plug 'rust-lang/rust.vim', { 'for': 'rust' }   " rust
+    Plug 'cespare/vim-toml', { 'for': 'toml' }
+    Plug 'fatih/vim-go', { 'for': 'go' } " , { 'do': ':GoUpdateBinaries' }
+    Plug 'tikhomirov/vim-glsl', { 'for': 'glsl' }
+    Plug 'JuliaEditorSupport/julia-vim', { 'for': 'julia' }
+    Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+    Plug 'petRUShka/vim-opencl', { 'for': 'opencl' }
     Plug 'ollykel/v-vim', { 'for': 'vlang' }
-    Plug 'davidhalter/jedi-vim'
     Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
     Plug 'alx741/vim-hindent', { 'for': 'haskell' }
-    Plug 'pangloss/vim-javascript'
-    Plug 'dag/vim-fish'
+    Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+    Plug 'dag/vim-fish', { 'for': 'fish' }
 call plug#end()
 
-" Go to definition (and center result)
+
+" # Nice keybindings
+" Set the <esc> key to something more accessible
+inoremap J <esc>
+inoremap F :Autoformat<cr>
+
+" Alternative formatting system:
+" nnoremap <c-f> :call CocAction('format')<CR>
+
+
+" 1.) Go to definition
+" 2.) center result
 nmap gd :call CocAction('jumpDefinition', 'tab drop')<CR> zz
 
 " Mappings for convinience
-nmap ø :CocAction<CR>
-nmap <space>e :CocCommand explorer<CR>
+nmap O :CocAction<CR>
 nmap <space>f :FuzzyOpen<cr>
-
 nmap <space>g :FuzzyGrep<cr>
 
 " Open window to a given side
@@ -132,9 +123,6 @@ nmap <space>j :sp<cr>:FuzzyOpen<cr>
 nmap <space>l :vsp<cr>:FuzzyOpen<cr>
 nmap <space>h :vsp<cr><c-w>h:FuzzyOpen<cr>
 
-" new line underneath
-nmap <c-o>  o<c-c>k
-
 
 " Moving Window sizes
 nmap <c-l> <c-w><
@@ -142,15 +130,7 @@ nmap <c-h> <c-w>>
 nmap <c-j> <c-w>-
 nmap <c-k> <c-w>+
 
-" Codi repls
-nmap <space>cp :Codi python<CR>
-nmap <space>cj :Codi julia<CR>
-nmap <space>ch :Codi haskell<CR>
-nmap <space>cn :Codi javascript<CR>
-nmap <space>ct :Codi typescript<CR>
-nmap <space>cc :Codi c<CR>
-
-nmap <space><space> :'<,'>Commentary<CR>
+nmap <space><space> :Commentary<cr>
 
 " Highlight the current line
 set cul
@@ -159,7 +139,7 @@ set cul
     " Get Slime to work
 let g:slime_target = "tmux"
 
-    " Proper use of Selection
+" Proper use of Selection
 autocmd InsertLeave, CompleteDone * if pumvisible() == 0 | pclose | endif
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
@@ -195,6 +175,9 @@ set termguicolors
     au BufNewFile,BufRead *.sol set filetype=solar
     au FileType solar set syntax=haskell
 
+    au BufNewFile,BufRead *.sol.ir set filetype=solar-ir
+    au FileType solar-ir set syntax=rust
+
     " Recognize plain files
     au BufNewFile,BufRead *.plain set filetype=plain
     au FileType plain set syntax=go
@@ -207,16 +190,6 @@ set termguicolors
 " Recognize crystal
 au BufNewFile,BufRead *.cr set filetype=crystal
 " au FileType solar set syntax=ruby
-
-
-let g:python_host_prog = "/usr/bin/python2"
-let g:python3_host_prog = "/usr/local/bin/python3"
-
-" TODO check this in practice
-" I got a number of formatters installed by now.
-" Not happy with the `google/*` stuff.
-" Checking if coc does a better job
-nnoremap <c-f> :call CocAction('format')<CR>
 
 
 " latex live preview opened with :LLPStartPreview
