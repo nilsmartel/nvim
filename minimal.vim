@@ -114,7 +114,8 @@ nmap gl :vsp<cr> :call CocAction('jumpDefinition')<CR> zz
 
 " Mappings for convinience
 nmap ø :CocAction<CR>
-nmap O ko
+" nmap O ko " doesnt work for first line
+nmap O I<cr><esc>ka
 nmap <space>f :FuzzyOpen<cr>
 nmap <space>g :FuzzyGrep<cr>
 
