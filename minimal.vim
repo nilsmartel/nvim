@@ -100,7 +100,6 @@ call plug#end()
 " # Nice keybindings
 " Set the <esc> key to something more accessible
 nnoremap <c-f> :call CocAction('format')<cr>
-nnoremap F :Autoformat<cr>
 
 " Alternative formatting system:
 " nnoremap <c-f> :call CocAction('format')<CR>
