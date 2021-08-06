@@ -75,6 +75,7 @@ call plug#begin()
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     " Language specific
+    Plug 'Olical/conjure', {'tag': 'v4.22.1'}
     Plug 'rhysd/vim-llvm' " llvm ir
     Plug 'bfrg/vim-cpp-modern', { 'for': 'cpp' }
     Plug 'keith/swift.vim', { 'for': 'swift' }
