@@ -32,9 +32,6 @@ endif
 set mouse=a
 
 call plug#begin()
-    " for using neovim in Firefox
-    Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
-
     " Treesitter
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
@@ -202,3 +199,11 @@ nmap <space>x :LLPStartPreview<CR>
 
 " using this only for neovide
 let g:neovide_iso_layout=1
+
+
+
+" Ensure that { and } work on blank lines, not just empty ones
+noremap } <Cmd>call search('^\s*$\\|\%$', 'W')<CR>
+
+noremap { <Cmd>call search('^\s*$\\|\%^', 'Wb')<CR>
+1
