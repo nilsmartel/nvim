@@ -203,7 +203,5 @@ let g:neovide_iso_layout=1
 
 
 " Ensure that { and } work on blank lines, not just empty ones
-noremap } <Cmd>call search('^\s*$\\|\%$', 'W')<CR>
-
-noremap { <Cmd>call search('^\s*$\\|\%^', 'Wb')<CR>
-1
+noremap { <Cmd>call search('^\s*\S', 'Wbc') \| call search('^\s*$\\|\%^', 'Wb')<CR>
+noremap } <Cmd>call search('^\s*\S', 'Wc') \| call search('^\s*$\\|\%$', 'W')<CR>
