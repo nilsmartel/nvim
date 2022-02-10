@@ -48,12 +48,12 @@ call plug#begin()
     Plug 'markonm/traces.vim'
 
     " Live editing
-    Plug 'michaelb/sniprun', {'do': 'bash install.sh'}
     Plug 'jpalardy/vim-slime'
     Plug 'metakirby5/codi.vim'
 
 
     " Syntax and Themes
+    Plug 'sonph/onehalf', { 'rtp': 'vim' }
     Plug 'bluz71/vim-nightfly-guicolors'
     Plug 'rafalbromirski/vim-aurora'
     Plug 'bluz71/vim-nightfly-guicolors'
@@ -72,6 +72,7 @@ call plug#begin()
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     " Language specific
+    Plug 'dart-lang/dart-vim-plugin'
     Plug 'Olical/conjure', {'tag': 'v4.22.1'}
     Plug 'rhysd/vim-llvm' " llvm ir
     Plug 'bfrg/vim-cpp-modern', { 'for': 'cpp' }
@@ -145,19 +146,13 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 
 let g:airline#extensions#coc#enabled = 1
-let g:airline_theme = 'dracula'
 
-" Automatically clear space at the end of lines
-autocmd BufWritePre * %s/\s\+$//e
+" CoC Settings
+nmap H :call CocAction('doHover')<cr>
 
-" Doesnt work well with darcula
-"   if has('nvim') || has('termguicolors')
-"       set termguicolors
-"   endif
-
-" Color Scheme
-
-set termguicolors
+source ~/.config/nvim/solar.vim
+" Recognize crystal
+au BufNewFile,BufRead *.cr set filetype=crystal
 
 " Language Agnostic sources
 au FileType go source ~/.config/nvim/configs/go.vim
@@ -166,30 +161,14 @@ au FileType latex,tex source ~/.config/nvim/configs/latex.vim
 au FileType html,javascript,typescript,typescriptreact,json,yaml source ~/.config/nvim/configs/webdev.vim
 
 " Colorscheme selection
-colorscheme xcodedark
 set termguicolors
-
-""" START Solar development
-"
-    " Recognize solar files
-    au BufNewFile,BufRead *.sol set filetype=solar
-    au FileType solar set syntax=haskell
-
-    au BufNewFile,BufRead *.sol.ir set filetype=solar-ir
-    au FileType solar-ir set syntax=rust
-
-    " Recognize plain files
-    au BufNewFile,BufRead *.plain set filetype=plain
-    au FileType plain set syntax=go
-
-    " Recognize syntax files
-    au BufNewFile,BufRead *.syntax set syntax=haskell
-
-""" END Solar development
-
-" Recognize crystal
-au BufNewFile,BufRead *.cr set filetype=crystal
-" au FileType solar set syntax=ruby
+colorscheme onehalfdark
+let g:airline_theme='onehalfdark'
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 
 
 " latex live preview opened with :LLPStartPreview
@@ -200,7 +179,8 @@ nmap <space>x :LLPStartPreview<CR>
 " using this only for neovide
 let g:neovide_iso_layout=1
 
-
+" Automatically clear space at the end of lines
+autocmd BufWritePre * %s/\s\+$//e
 
 " Ensure that { and } work on blank lines, not just empty ones
 noremap { <Cmd>call search('^\s*\S', 'Wbc') \| call search('^\s*$\\|\%^', 'Wb')<CR>
