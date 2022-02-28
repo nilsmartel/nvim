@@ -2,7 +2,7 @@
 "
 " Recognize solar files
 au BufNewFile,BufRead *.sol set filetype=solar
-au FileType solar set syntax=haskell
+au FileType solar set syntax=julia
 
 au BufNewFile,BufRead *.sol.ir set filetype=solar-ir
 au FileType solar-ir set syntax=rust
