@@ -53,7 +53,7 @@ call plug#begin()
 
 
     " Syntax and Themes
-    Plug 'sonph/onehalf', { 'rtp': 'vim' }
+    Plug 'navarasu/onedark.nvim'
     Plug 'bluz71/vim-nightfly-guicolors'
     Plug 'rafalbromirski/vim-aurora'
     Plug 'bluz71/vim-nightfly-guicolors'
@@ -162,8 +162,8 @@ au FileType html,javascript,typescript,typescriptreact,json,yaml source ~/.confi
 
 " Colorscheme selection
 set termguicolors
-colorscheme onehalfdark
-let g:airline_theme='onehalfdark'
+colorscheme onedark
+let g:airline_theme='xcodedark'
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
