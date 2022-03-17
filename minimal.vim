@@ -175,6 +175,7 @@ endif
 let g:livepreview_previewer = 'open -a Preview'
 nmap <space>x :LLPStartPreview<CR>
 
+nmap <C-p> <esc>:FuzzyGrep<CR>
 
 " using this only for neovide
 let g:neovide_iso_layout=1
