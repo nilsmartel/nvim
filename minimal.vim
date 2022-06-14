@@ -35,6 +35,9 @@ call plug#begin()
     " Treesitter
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
+    " Rainbow!
+    Plug 'luochen1990/rainbow'
+
     " Formatting related
     Plug 'chiel92/vim-autoformat'
     Plug 'rstacruz/vim-closer'
@@ -179,6 +182,8 @@ nmap <C-p> <esc>:FuzzyGrep<CR>
 
 " using this only for neovide
 let g:neovide_iso_layout=1
+
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 
 " Automatically clear space at the end of lines
 autocmd BufWritePre * %s/\s\+$//e
