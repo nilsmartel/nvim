@@ -31,6 +31,9 @@ endif
 " Ensure that mouse clicking works nice
 set mouse=a
 
+" Tone down matching bracket color highlighting
+hi MatchParen cterm=none ctermbg=green ctermfg=blue
+
 call plug#begin()
     " Treesitter
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
@@ -55,7 +58,7 @@ call plug#begin()
     Plug 'metakirby5/codi.vim'
 
 
-    " Syntax and Themes
+    " Syntax and Themes:q
     Plug 'navarasu/onedark.nvim'
     Plug 'bluz71/vim-nightfly-guicolors'
     Plug 'rafalbromirski/vim-aurora'
