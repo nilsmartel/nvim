@@ -1,7 +1,3 @@
-" in case vim is started from fish
-if &shell =~# 'fish$'
-    set shell=sh
-endif
 " Coc installed files are:
 "
 " https://github.com/weirongxu/coc-explorer
@@ -27,12 +23,6 @@ endif
 "   brew install fzy
 " CocInstall coc-go
 " CocInstall coc-docker
-
-" Ensure that mouse clicking works nice
-set mouse=a
-
-" Tone down matching bracket color highlighting
-hi MatchParen cterm=none ctermbg=green ctermfg=blue
 
 call plug#begin()
     " Treesitter
@@ -102,8 +92,10 @@ call plug#begin()
 call plug#end()
 
 
-" # Nice keybindings
-" Set the <esc> key to something more accessible
+" # keybindings for plugings
+"
+"
+" here's COC
 nnoremap <c-f> :call CocAction('format')<cr>
 
 " Alternative formatting system:
@@ -118,7 +110,10 @@ nmap gl :vsp<cr> :call CocAction('jumpDefinition')<CR> zz
 
 " Mappings for convinience
 nmap ø :CocAction<CR>
-" nmap O ko " doesnt work for first line
+
+" Fuzzy Searching
+
+" nmap O k o " doesnt work for first line
 nmap O I<cr><esc>ka
 nmap <space>f :FuzzyOpen<cr>
 nmap <space>g :FuzzyGrep<cr>
@@ -130,13 +125,6 @@ nmap <space>j :sp<cr>:FuzzyOpen<cr>
 nmap <space>l :vsp<cr>:FuzzyOpen<cr>
 nmap <space>h :vsp<cr><c-w>h:FuzzyOpen<cr>
 
-
-" Moving Window sizes
-nmap <c-l> <c-w><
-nmap <c-h> <c-w>>
-nmap <c-j> <c-w>-
-nmap <c-k> <c-w>+
-
 nmap <space><space> :Commentary<cr>
 
 " Highlight the current line
@@ -146,35 +134,11 @@ set cul
     " Get Slime to work
 let g:slime_target = "tmux"
 
-" Proper use of Selection
-autocmd InsertLeave, CompleteDone * if pumvisible() == 0 | pclose | endif
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-
-
 let g:airline#extensions#coc#enabled = 1
 
 " CoC Settings
 nmap H :call CocAction('doHover')<cr>
 
-source ~/.config/nvim/solar.vim
-" Recognize crystal
-au BufNewFile,BufRead *.cr set filetype=crystal
-
-" Language Agnostic sources
-au FileType go source ~/.config/nvim/configs/go.vim
-au FileType julia source ~/.config/nvim/configs/julia.vim
-au FileType latex,tex source ~/.config/nvim/configs/latex.vim
-au FileType html,javascript,typescript,typescriptreact,json,yaml source ~/.config/nvim/configs/webdev.vim
-
-" Colorscheme selection
-set termguicolors
-colorscheme onedark
-let g:airline_theme='xcodedark'
-if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
-endif
 
 
 " latex live preview opened with :LLPStartPreview
@@ -188,9 +152,3 @@ let g:neovide_iso_layout=1
 
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 
-" Automatically clear space at the end of lines
-autocmd BufWritePre * %s/\s\+$//e
-
-" Ensure that { and } work on blank lines, not just empty ones
-noremap { <Cmd>call search('^\s*\S', 'Wbc') \| call search('^\s*$\\|\%^', 'Wb')<CR>
-noremap } <Cmd>call search('^\s*\S', 'Wc') \| call search('^\s*$\\|\%$', 'W')<CR>
