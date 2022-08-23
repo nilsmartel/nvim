@@ -66,6 +66,10 @@ source ~/.config/nvim/plugins.vim
 source ~/.config/nvim/ts.lua
 
 source ~/.config/nvim/solar.vim
+
+" Toggle explorer
+nmap <c-e> <esc>:NERDTreeToggle<cr>
+
 " Recognize crystal
 au BufNewFile,BufRead *.cr set filetype=crystal
 
