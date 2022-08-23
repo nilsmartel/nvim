@@ -16,7 +16,7 @@ set cursorline      " lightly highlight current line
 set mouse=a
 
 " Tone down matching bracket color highlighting
-hi MatchParen cterm=none ctermbg=green ctermfg=blue
+hi MatchParen cterm=none ctermbg=none ctermfg=blue
 
 set ignorecase
 set smartcase
