@@ -44,11 +44,6 @@ autocmd FileType yaml set shiftwidth=2
 autocmd FileType json set shiftwidth=2
 autocmd FileType typescript set shiftwidth=2
 
-" Proper use of Selection
-autocmd InsertLeave, CompleteDone * if pumvisible() == 0 | pclose | endif
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-
-
 " Moving Window sizes
 nmap <c-l> <c-w><
 nmap <c-h> <c-w>>
