@@ -31,6 +31,9 @@ call plug#begin()
     " Rainbow!
     Plug 'luochen1990/rainbow'
 
+    Plug 'preservim/nerdtree'
+    Plug 'unblevable/quick-scope'
+
     " Formatting related
     Plug 'chiel92/vim-autoformat'
     Plug 'rstacruz/vim-closer'
