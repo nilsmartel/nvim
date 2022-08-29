@@ -61,8 +61,9 @@ noremap { <Cmd>call search('^\s*\S', 'Wbc') \| call search('^\s*$\\|\%^', 'Wb')<
 noremap } <Cmd>call search('^\s*\S', 'Wc') \| call search('^\s*$\\|\%$', 'W')<CR>
 
 source ~/.config/nvim/plugins.vim
-source ~/.config/nvim/ts.lua
+source ~/.config/nvim/coc.vim
 
+source ~/.config/nvim/ts.lua
 source ~/.config/nvim/solar.vim
 
 " Toggle explorer

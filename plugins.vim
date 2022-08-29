@@ -95,29 +95,10 @@ call plug#begin()
 call plug#end()
 
 
-" # keybindings for plugings
-"
-"
-" here's COC
-nnoremap <c-f> :call CocAction('format')<cr>
-
-" Alternative formatting system:
-" nnoremap <c-f> :call CocAction('format')<CR>
-
-
-" 1.) Go to definition
-" 2.) center result
-nmap gd :call CocAction('jumpDefinition', 'tab drop')<CR> zz
-
-nmap gl :vsp<cr> :call CocAction('jumpDefinition')<CR> zz
-
-" Mappings for convinience
-nmap ø :CocAction<CR>
-
-" Fuzzy Searching
-
 " nmap O k o " doesnt work for first line
 nmap O I<cr><esc>ka
+
+" Fuzzy Searching
 nmap <space>f :FuzzyOpen<cr>
 nmap <space>g :FuzzyGrep<cr>
 
@@ -128,7 +109,9 @@ nmap <space>j :sp<cr>:FuzzyOpen<cr>
 nmap <space>l :vsp<cr>:FuzzyOpen<cr>
 nmap <space>h :vsp<cr><c-w>h:FuzzyOpen<cr>
 
-nmap <space><space> :Commentary<cr>
+nmap <space><space> :tabedit<cr>:FuzzyGrep<cr>
+" make grepping work as if we're in vscode
+nmap <C-p> <esc>:FuzzyGrep<CR>
 
 " Highlight the current line
 set cul
@@ -139,16 +122,12 @@ let g:slime_target = "tmux"
 
 let g:airline#extensions#coc#enabled = 1
 
-" CoC Settings
-nmap H :call CocAction('doHover')<cr>
-
 
 
 " latex live preview opened with :LLPStartPreview
 let g:livepreview_previewer = 'open -a Preview'
 nmap <space>x :LLPStartPreview<CR>
 
-nmap <C-p> <esc>:FuzzyGrep<CR>
 
 " using this only for neovide
 let g:neovide_iso_layout=1
