@@ -30,6 +30,9 @@ set splitright      " Open splitted Windows to the right
 " Clear Highlighted Text when pressing escape
 nnoremap <silent> <esc> :noh<cr><esc>
 
+nmap ø {
+nmap þ }
+
 " Avoid common typos
 map q: <Nop>
 nnoremap Q <nop>
