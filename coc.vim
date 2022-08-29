@@ -32,7 +32,16 @@ nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " Information on H
-nmap H :call CocAction('doHover')<cr>
+" Use H to show documentation in preview window.
+nnoremap <silent> H :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
 
 " 1.) Go to definition
 " 2.) center result
@@ -41,12 +50,14 @@ nmap gl :vsp<cr> :call CocAction('jumpDefinition')<CR> zz
 
 nnoremap <c-f> :call CocAction('format')<cr>
 
-
+" Symbol renaming.
+nmap <c-n> <Plug>(coc-rename)
 
 " Keymappings exported by this file:
 " <shift> H     Show Definition
 " <ctrl><space> Show completions
-" <ctrl> F      Format Code
+" <ctrl> N      Rename
+" <ctrl> F      Format
 " gd            Go to Definition
 " [g            Go to Error
 " ]g            Go to Error
