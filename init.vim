@@ -69,8 +69,10 @@ source ~/.config/nvim/solar.vim
 " Toggle explorer
 nmap <c-e> <esc>:NERDTreeToggle<cr>
 
-" Recognize crystal
+" Recognize crystal, wgsl, etc.
 au BufNewFile,BufRead *.cr set filetype=crystal
+
+au BufNewFile,BufRead *.wgsl set filetype=wgsl
 
 " Language Agnostic sources
 au FileType go source ~/.config/nvim/configs/go.vim

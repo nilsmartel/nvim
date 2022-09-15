@@ -1,4 +1,5 @@
 {
+  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "javascript", "graphql", "html", "yaml",  "json", "python", "rust", "go", "typescript"],
   "explorer.icon.enableNerdfont": true,
   "languageserver": {
     "golang": {
@@ -68,8 +69,14 @@
       }
     },
     "crystal": {
-      "command": "/usr/local/bin/crystalline",
-      "filetypes": ["crystal", "cr"]
+      "command": "crystalline",
+      "args": [
+        "--stdio"
+      ],
+      "filetypes": [
+        "crystal"
+      ],
+      "rootPatterns": ["shard.yml"]
     }
   },
   "codeLens.enable": true,

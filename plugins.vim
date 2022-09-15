@@ -36,7 +36,8 @@ call plug#begin()
 
     " Formatting related
     Plug 'chiel92/vim-autoformat'
-    Plug 'rstacruz/vim-closer'
+        " automatically closes brackets
+    " Plug 'rstacruz/vim-closer'
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-commentary'
 
