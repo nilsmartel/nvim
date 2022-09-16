@@ -2,6 +2,10 @@
   "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "javascript", "graphql", "html", "yaml",  "json", "python", "rust", "go", "typescript"],
   "explorer.icon.enableNerdfont": true,
   "languageserver": {
+    "wgsl": {
+      "command": "wgsl_analyzer",
+      "filetypes": ["wgsl"],
+    },
     "golang": {
       "command": "gopls",
       "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
