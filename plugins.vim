@@ -28,11 +28,14 @@ call plug#begin()
     " Treesitter
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
-    " Rainbow!
+    " Rainbow Parenthesis!
     Plug 'luochen1990/rainbow'
 
     Plug 'preservim/nerdtree'
     Plug 'unblevable/quick-scope'
+
+    " Git
+    Plug 'tpope/vim-fugitive'
 
     " Formatting related
     Plug 'chiel92/vim-autoformat'
@@ -52,7 +55,7 @@ call plug#begin()
     Plug 'metakirby5/codi.vim'
 
 
-    " Syntax and Themes:q
+    " Syntax and Themes
     Plug 'navarasu/onedark.nvim'
     Plug 'bluz71/vim-nightfly-guicolors'
     Plug 'rafalbromirski/vim-aurora'
