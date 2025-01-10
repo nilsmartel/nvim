@@ -1,5 +1,7 @@
 # config-nvim
 
+<selected> S >})] -> surround with braces
+
 gd -> goto definition (new tab)
 gl -> goto definition (left pane)
 H -> Show documentation
