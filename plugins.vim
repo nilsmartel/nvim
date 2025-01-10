@@ -127,14 +127,5 @@ let g:slime_target = "tmux"
 let g:airline#extensions#coc#enabled = 1
 
 
-
-" latex live preview opened with :LLPStartPreview
-let g:livepreview_previewer = 'open -a Preview'
-nmap <space>x :LLPStartPreview<CR>
-
-
-" using this only for neovide
-let g:neovide_iso_layout=1
-
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 
